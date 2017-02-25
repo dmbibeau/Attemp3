@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="638.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="-14.0" prefHeight="453.0" prefWidth="521.0" AnchorPane.bottomAnchor="-170.0" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="-129.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="35.0" layoutY="103.0" prefHeight="28.0" prefWidth="72.0" text="Credit Card" />
+            <Label layoutX="35.0" layoutY="142.0" prefHeight="28.0" prefWidth="89.0" text="Phone Number" />
+            <TextField layoutX="81.0" layoutY="66.0" promptText="Firstname" />
+            <Label layoutX="29.0" layoutY="211.0" prefHeight="25.0" prefWidth="89.0" text="Birthday" />
+            <Label layoutX="39.0" layoutY="258.0" text="Email" />
+            <Label layoutX="34.0" layoutY="329.0" text="Rentals" />
+            <Label layoutX="33.0" layoutY="294.0" text="Address" />
+            <TextField layoutX="124.0" layoutY="144.0" />
+            <TextField layoutX="89.0" layoutY="211.0" promptText="Month/Day/Year" />
+            <TextField layoutX="89.0" layoutY="254.0" />
+            <TextField layoutX="89.0" layoutY="290.0" prefHeight="25.0" prefWidth="391.0" />
+            <TextField layoutX="107.0" layoutY="105.0" />
+            <TextField layoutX="244.0" layoutY="66.0" promptText="Lastname" />
+            <Label layoutX="269.0" layoutY="364.0" text="Due Date" />
+            <Label layoutX="35.0" layoutY="64.0" prefHeight="28.0" prefWidth="82.0" text="Name" />
+            <Label layoutX="269.0" layoutY="390.0" text="Due Date" />
+            <Label layoutX="269.0" layoutY="415.0" text="Due Date" />
+            <Label layoutX="39.0" layoutY="462.0" text="Movies on Hold" />
+            <Label layoutX="47.0" layoutY="502.0" text="Alerts" />
+            <Label layoutX="317.0" layoutY="502.0" prefHeight="17.0" prefWidth="38.0" text="pinn #" />
+            <Label layoutX="402.0" layoutY="502.0" prefHeight="17.0" prefWidth="95.0" text="pinn" />
+            <Label layoutX="107.0" layoutY="363.0" prefHeight="17.0" prefWidth="132.0" text="Label" />
+            <Label layoutX="107.0" layoutY="390.0" prefHeight="17.0" prefWidth="132.0" text="Label" />
+            <Label layoutX="107.0" layoutY="415.0" prefHeight="17.0" prefWidth="132.0" text="Label" />
+            <DatePicker layoutX="355.0" layoutY="360.0" />
+            <DatePicker layoutX="355.0" layoutY="392.0" />
+            <DatePicker layoutX="355.0" layoutY="432.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
