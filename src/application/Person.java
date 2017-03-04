@@ -35,7 +35,7 @@ public class Person {
 	private TextField lastName;
 	
 	
-	Person(String pinn,String lastName, String firstName ){
+	Person(String pinn,String lastName, String firstName, String CreditCard ){
 		pinn = this.pinn.getText();
 	}
 }
