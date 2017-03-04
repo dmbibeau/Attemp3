@@ -12,7 +12,7 @@ public class HelloController {
 	void handleButton(ActionEvent ae){
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("AddCustomerGUI.fxml"));
-			Scene scene = new Scene(root,400,400);
+			Scene scene = new Scene(root,800,800);
 			Stage stage = new Stage();
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage.setScene(scene);
