@@ -45,6 +45,18 @@ public class AddCustomerController {
 	
 	HashSet<Integer> store = new HashSet<Integer>();
 	@FXML
+	public void checkNums(ActionEvent event){
+		String num=creditCard.getText();
+		if(num.length()>=16){
+			creditCard.setText("");
+			
+		}
+		String ph= phoneNum.getText();
+		if (ph.length()>=10){
+			phoneNum.setText("");
+		}
+	}
+	@FXML
 	public void generatePin(ActionEvent event) {
 		
 		System.out.println(event.getSource());

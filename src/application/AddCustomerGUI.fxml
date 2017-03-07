@@ -21,7 +21,7 @@
             <TextField layoutX="89.0" layoutY="211.0" promptText="Month/Day/Year" />
             <TextField layoutX="89.0" layoutY="254.0" />
             <TextField layoutX="89.0" layoutY="290.0" prefHeight="25.0" prefWidth="391.0" />
-            <TextField fx:id="creditCard" layoutX="107.0" layoutY="105.0" />
+            <TextField fx:id="creditCard" layoutX="107.0" layoutY="105.0" onAction="#crdtNum" />
             <TextField fx:id="lastName" layoutX="244.0" layoutY="66.0" promptText="Lastname" />
             <Label layoutX="269.0" layoutY="364.0" text="Due Date" />
             <Label layoutX="35.0" layoutY="64.0" prefHeight="28.0" prefWidth="82.0" text="Name" />
