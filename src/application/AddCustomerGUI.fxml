@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="539.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddCustomerController">
    <children>
-      <AnchorPane layoutX="-14.0" prefHeight="739.0" prefWidth="712.0" AnchorPane.bottomAnchor="-170.0" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="-129.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="-19.0" layoutY="-13.0" prefHeight="739.0" prefWidth="712.0" AnchorPane.bottomAnchor="-157.0" AnchorPane.leftAnchor="-19.0" AnchorPane.rightAnchor="-124.0" AnchorPane.topAnchor="-13.0">
          <children>
             <Label layoutX="35.0" layoutY="103.0" prefHeight="28.0" prefWidth="72.0" text="Credit Card" />
             <Label layoutX="35.0" layoutY="142.0" prefHeight="28.0" prefWidth="89.0" text="Phone Number" />
@@ -17,11 +17,11 @@
             <Label layoutX="39.0" layoutY="258.0" text="Email" />
             <Label layoutX="34.0" layoutY="329.0" text="Rentals" />
             <Label layoutX="33.0" layoutY="294.0" text="Address" />
-            <TextField layoutX="124.0" layoutY="144.0" />
-            <TextField layoutX="89.0" layoutY="211.0" promptText="Month/Day/Year" />
-            <TextField layoutX="89.0" layoutY="254.0" />
-            <TextField layoutX="89.0" layoutY="290.0" prefHeight="25.0" prefWidth="391.0" />
-            <TextField fx:id="creditCard" layoutX="107.0" layoutY="105.0" onAction="#crdtNum" />
+            <TextField fx:id="phoneNum" layoutX="124.0" layoutY="144.0" />
+            <TextField fx:id="bDay" layoutX="89.0" layoutY="211.0" promptText="Month/Day/Year" />
+            <TextField fx:id="email" layoutX="89.0" layoutY="254.0" />
+            <TextField fx:id="address" layoutX="89.0" layoutY="290.0" prefHeight="25.0" prefWidth="391.0" />
+            <TextField fx:id="creditCard" layoutX="107.0" layoutY="105.0" />
             <TextField fx:id="lastName" layoutX="244.0" layoutY="66.0" promptText="Lastname" />
             <Label layoutX="269.0" layoutY="364.0" text="Due Date" />
             <Label layoutX="35.0" layoutY="64.0" prefHeight="28.0" prefWidth="82.0" text="Name" />
@@ -38,6 +38,7 @@
             <DatePicker layoutX="355.0" layoutY="432.0" />
             <Button fx:id="addPin" layoutX="511.0" layoutY="498.0" mnemonicParsing="false" onAction="#generatePin" text="Button" />
             <Label fx:id="pinn" layoutX="404.0" layoutY="502.0" prefHeight="17.0" prefWidth="58.0" />
+            <Button layoutX="454.0" layoutY="14.0" mnemonicParsing="false" onAction="#create" text="Add" />
          </children>
       </AnchorPane>
    </children>

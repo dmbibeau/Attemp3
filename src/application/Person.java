@@ -1,41 +1,83 @@
 package application;
 
+import java.util.Date;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class Person {
-	@FXML
-	private Button addPin;
-	@FXML
-	private Label pinn;
-	@FXML
-	private Label addpinn;
+
+	Person(){}
+	private int pin;
 	
-	@FXML
-	private TextField firstName;
-
-	@FXML
-	private TextField phoneNum;
-
-	@FXML
-	private TextField bDay;
-
-	@FXML
-	private TextField email;
-
-	@FXML
-	private TextField address;
-
-	@FXML
-	private TextField creditCard;
-
-	@FXML
-	private TextField lastName;
+	private String firstName;
+	
+	private String phoneNum;
+	
+	private Date bDay;
+	
+	private String email;
+	
+	private String address;
+	
+	private String creditCard;
+	
+	private String lastName;
 	
 	
-	Person(String pinn,String lastName, String firstName, String CreditCard ){
-		pinn = this.pinn.getText();
+	Person(int pinn,String lastname, String firstname, String CreditCard , String phone, Date b_Day, String adress){
+		pin=pinn;
+		firstName=firstname;
+		lastName = lastname;
+		phoneNum=phone;
+		bDay = b_Day;
+		email = null;//to be fixed later
+		address = adress;
+		creditCard=CreditCard;
+		
 	}
+
+
+	public int getPin() {
+		return pin;
+	}
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+	public String getPhoneNum() {
+		return phoneNum;
+	}
+
+
+	public Date getbDay() {
+		return bDay;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public String getCreditCard() {
+		return creditCard;
+	}
+
+
+	public String getLastName() {
+		return lastName;
+	}
+	
+
 }

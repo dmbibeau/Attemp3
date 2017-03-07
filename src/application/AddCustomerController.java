@@ -1,5 +1,10 @@
 package application;
 
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashSet;
 
 import javafx.event.ActionEvent;
@@ -46,16 +51,48 @@ public class AddCustomerController {
 	HashSet<Integer> store = new HashSet<Integer>();
 	@FXML
 	public void checkNums(ActionEvent event){
-		String num=creditCard.getText();
+		String num=creditCard.getText();	
+		String ph= phoneNum.getText();
 		if(num.length()>=16){
 			creditCard.setText("");
 			
 		}
-		String ph= phoneNum.getText();
-		if (ph.length()>=10){
+	
+		else if (ph.length()>=10){
 			phoneNum.setText("");
 		}
+		else {
+			create();
+		}
+			
 	}
+	public void create(){
+		@SuppressWarnings("unused")
+		int i =0;
+		String o=bDay.getText();
+		DateFormat format= new SimpleDateFormat("MMMM.dd.yy");
+		Person customer = new Person();
+		Date date;
+		
+		try {
+			date = format.parse(o);
+		    customer = new Person(Integer.parseInt(pinn.getText()), lastName.getText(), firstName.getText(), creditCard.getText(), phoneNum.getText(), date, address.getText());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		CustomerDB customerDB = new CustomerDB(customer);
+		try {
+			customerDB.addInfo();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		//System.out.println(customer.getAddress() +customer.getAddress() +);
+	}
+	
 	@FXML
 	public void generatePin(ActionEvent event) {
 		
@@ -77,6 +114,7 @@ public class AddCustomerController {
 	}
 	
 
+	@SuppressWarnings("rawtypes")
 	public void createPin1(int pin,HashSet Store) {
 		if (!store.contains(pin)) {
 			if (10000 > pin) {
@@ -90,4 +128,6 @@ public class AddCustomerController {
 	else 
 
 createPin1(pin++, store);}
+	
+	
 }
