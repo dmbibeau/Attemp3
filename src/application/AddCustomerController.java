@@ -116,7 +116,11 @@ public class AddCustomerController {
 	
 
 	@SuppressWarnings("rawtypes")
-	public void createPin1(int pin,HashSet Store) {
+	public void createPin1(int pin) {
+		
+		/* 
+		 * 
+		 */
 		if (!store.contains(pin)) {
 			if (10000 > pin) {
 				pin++;
@@ -126,9 +130,6 @@ public class AddCustomerController {
 			store.add(pin);
 
 		}
-	else 
-
-createPin1(pin++, store);}
-	
+		
 	
 }

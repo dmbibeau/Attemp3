@@ -1,3 +1,4 @@
+
 package application;
 
 import java.sql.DriverManager;
@@ -9,7 +10,7 @@ public class Database {
 private String MYSQL_DRIVER= "com.mysql.jdbc.Driver";
 private String MYSQL_URL="jdbc:mysql://localhost:3306/DDT_Movies?useSSl=true";
 private String user ="root";
-private String password="Marie@21";
+private String password="God0fmadnes$";
 private java.sql.Connection con;
 
 public Connection MySqlConnection(){
