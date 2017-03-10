@@ -70,25 +70,26 @@ public class AddCustomerController {
 		@SuppressWarnings("unused")
 		int i =0;
 		String o=bDay.getText();
-		DateFormat format= new SimpleDateFormat("MMMM.dd.yy");
+		DateFormat format= new SimpleDateFormat("yyyyMMdd");
 		Person customer = new Person();
-		Date date;
+		Date date ;
 		
 		try {
 			date = format.parse(o);
 		    customer = new Person(Integer.parseInt(pinn.getText()), lastName.getText(), firstName.getText(), creditCard.getText(), phoneNum.getText(), date, address.getText());
+		    CustomerDB customerDB = new CustomerDB(customer);
+			try {
+				customerDB.addInfo();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		CustomerDB customerDB = new CustomerDB(customer);
-		try {
-			customerDB.addInfo();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 	
 		//System.out.println(customer.getAddress() +customer.getAddress() +);
 	}

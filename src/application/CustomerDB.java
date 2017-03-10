@@ -17,7 +17,7 @@ public class CustomerDB {
 	}
 	public void addInfo() throws Exception{
 		
-		String Querry= " Insert into Customer(pin, Last_Name, first_Name,credit_card,phone_num,b_day, address?)"
+		String Querry= " Insert into Customer(pin, Last_Name, first_Name,credit_card,phone_num,b_day, address)"
 				+ "values(?,?,?,?,?,?,?);";
 		
 		PreparedStatement statement = con.prepareStatement(Querry);

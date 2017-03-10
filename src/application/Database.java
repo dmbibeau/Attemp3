@@ -6,8 +6,8 @@ import java.beans.Statement;
 import java.sql.Connection;
 
 public class Database {
-private String MYSQL_DRIVER= " come.mysql.jdb.Driver";
-private String MYSQL_URL="jdbc:mysql://localhost:3306/DDT_Movie?useSSl=false";
+private String MYSQL_DRIVER= "com.mysql.jdbc.Driver";
+private String MYSQL_URL="jdbc:mysql://localhost:3306/DDT_Movies?useSSl=true";
 private String user ="root";
 private String password="Marie@21";
 private java.sql.Connection con;
