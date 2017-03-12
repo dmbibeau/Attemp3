@@ -86,8 +86,6 @@ public class AddCustomerController {
 		try{
 			Connection con = getConnection();
 			System.out.println(firstName.getText());
-//			PreparedStatement posted = con.prepareStatement("INSERT INTO customer(name, surname, phone, email, credit_card, license, dob) VALUES "
-//					+ "('"+firstName.getText()+"', '"+lastName.getText()+"', '"+phoneNum.getText()+"', '"+email.getText()+"', '"+creditCard.getText()+"', '123456789', 1/1/1900)");
 			PreparedStatement posted = con.prepareStatement("INSERT INTO customer(name, surname, phone, email, address, credit_card, exp_date, license, dob) VALUES "
 					+ "('" + firstName.getText()
 					+"', '"+ lastName.getText()      
@@ -106,16 +104,6 @@ public class AddCustomerController {
 		finally{System.out.println("Entry added.");}
 	}
 	
-/*	public static void post() throws Exception{
-		final String var1 = "John";
-		final String var2 = "Miller";
-		
-		try{
-			Connection con = getConnection();
-			PreparedStatement posted = con.prepareStatement("");
-		}
-	}
-*/	
 	private static String MYSQL_DRIVER= "com.mysql.jdbc.Driver";
 	private static String MYSQL_URL="jdbc:mysql://localhost:3306/ddt_movies?useSSl=false";
 	private static String user ="root";

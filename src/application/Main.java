@@ -10,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-//import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {
@@ -49,7 +48,6 @@ public class Main extends Application {
 	public static void createTable() throws Exception{
 		try{
 			Connection con = getConnection();
-			//PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS tablename(id int NOT NULL AUTO_INCREMENT, first varchar(255), last varchar(255), PRIMARY KEY(id))");
 			PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS customer("
 					+ "pin int NOT NULL AUTO_INCREMENT, "
 					+ "name varchar(10), "
