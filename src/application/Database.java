@@ -1,18 +1,33 @@
 package application;
 
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import java.sql.Connection;
 
 public class Database {
-private String MYSQL_DRIVER= " come.mysql.jdb.Driver";
-private String MYSQL_URL="jdbc:mysql://localhost:3306/DDT Movie DB?useSSl=false";
-private String user ="root";
-private String password="Marie@21";
-private java.sql.Connection con;
+	
+/*private static String MYSQL_DRIVER= "com.mysql.jdbc.Driver";
+private static String MYSQL_URL="jdbc:mysql://172.19.5.9:3306/ddt_movies?useSSl=false";
+private static String user ="David";
+private static String password="mond1234";
+private static java.sql.Connection con;
 
-public Connection MySqlConnection(){
+public static void post() throws Exception{
+	final String var1 = "John";
+	final String var2 = "Miller";
+	try{
+			Connection con = MySqlConnection();
+			PreparedStatement posted = con.prepareStatement("INSERT INTO customer (name, surname) VALES ('"+var1+"'," +var2+"')");
+			posted.executeUpdate();
+	} catch(Exception e){System.out.println(e);}
+	finally {
+		System.out.println("Insert Completed");
+	}
+}
+	
+public static Connection MySqlConnection(){
 	
 	try{
 		Class.forName(MYSQL_DRIVER);
@@ -28,5 +43,5 @@ public Connection MySqlConnection(){
 		ex.printStackTrace();
 	}
 	return con;
-}
+}*/
 }

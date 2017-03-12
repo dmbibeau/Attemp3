@@ -15,6 +15,7 @@ public class HelloController {
 			Scene scene = new Scene(root,800,800);
 			Stage stage = new Stage();
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			stage.setTitle("Add Customer");
 			stage.setScene(scene);
 			stage.show();
 		} catch(Exception e) {
@@ -30,6 +31,7 @@ public class HelloController {
 			Scene scene = new Scene(root, 400,400);
 			//scene.getStylesheets().add(getClass().getResource("CustomersInfo.fxml").toExternalForm());
 			Stage stage = new Stage();
+			stage.setTitle("Find Customer");
 			stage.setScene(scene);
 			stage.show();
 			
