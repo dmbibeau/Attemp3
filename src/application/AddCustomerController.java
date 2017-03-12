@@ -1,81 +1,190 @@
 package application;
 
-import java.util.HashSet;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+//import java.util.HashSet;
 
+//import javafx.beans.property.Property;
+//import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+//import javafx.fxml.FXMLLoader;
+//import javafx.scene.Parent;
+//import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+//import javafx.stage.Stage;
+
+//import javafx.scene.control.TableView;
+//import javafx.scene.control.TableColumn;
+
 
 public class AddCustomerController {
-	@FXML
-	private Button addPin;
 	@FXML
 	private Label pinn;
 	@FXML
 	private Label addpinn;
-	int pin = 0;
+//	int pin = 0;
 	
-	   @FXML
-	    private TextField firstName;
+	//DEFINE FORM
+    @FXML
+    private TextField firstName;
 
-	    @FXML
-	    private TextField phoneNum;
+    @FXML
+    private TextField lastName;
 
-	    @FXML
-	    private TextField bDay;
+    @FXML
+    private TextField phone;
 
-	    @FXML
-	    private TextField email;
+    @FXML
+    private TextField bDay;
 
-	    @FXML
-	    private TextField address;
+    @FXML
+    private TextField license;
+    
+    @FXML
+    private TextField email;
 
-	    @FXML
-	    private TextField creditCard;
+    @FXML
+    private TextField address;
 
-	    @FXML
-	    private TextField lastName;
+    @FXML
+    private TextField creditCard;
+    
+    @FXML
+    private TextField exp_date;
 
-	
-	HashSet<Integer> store = new HashSet<Integer>();
 	@FXML
-	public void generatePin(ActionEvent event) {
-		
+	private Button addPin;
+	
+//	HashSet<Integer> store = new HashSet<Integer>();
+	@FXML
+	public void generatePin(ActionEvent event) throws Exception {
 		System.out.println(event.getSource());
 				try {
-			// also need to do check if pinn = 10000 if so set back to 0
+					createPin1();	
+			// also need to do check if pin = 10000 if so set back to 0
 		//	HashSet<Integer> store = new HashSet<Integer>();
-			if (event.getSource() == addPin) {
+//			if (event.getSource() == addPin) {
 				//createPin1(pin, store);
-			
-
 				
-					createPin1(pin, store);
+					//createPin1(pin, store);
+//				createPin1();
 
-		}} catch (Exception ex) {
+		} catch (Exception ex) {
 			System.out.println("blah");
 		}
 
 	}
-	
-
-	public void createPin1(int pin,HashSet Store) {
-		if (!store.contains(pin)) {
-			if (10000 > pin) {
-				pin++;
-
-				pinn.setText("" +String.valueOf(pin) );
-			}
-			store.add(pin);
-
+	public void submitEntry(ActionEvent event) throws Exception {
+		//System.out.println(event.getSource());
+		try{
+			Connection con = getConnection();
+			System.out.println(firstName.getText());
+//			PreparedStatement posted = con.prepareStatement("INSERT INTO customer(name, surname, phone, email, credit_card, license, dob) VALUES "
+//					+ "('"+firstName.getText()+"', '"+lastName.getText()+"', '"+phoneNum.getText()+"', '"+email.getText()+"', '"+creditCard.getText()+"', '123456789', 1/1/1900)");
+			PreparedStatement posted = con.prepareStatement("INSERT INTO customer(name, surname, phone, email, address, credit_card, exp_date, license, dob) VALUES "
+					+ "('" + firstName.getText()
+					+"', '"+ lastName.getText()      
+					+"', '"+ phone.getText()         
+					+"', '"+ email.getText()
+					+"', '"+ address.getText()
+					+"', '"+ creditCard.getText()
+					+"', '"+ exp_date.getText() //"2020-02-00"
+					+"', '"+ license.getText()
+					+"', '"+ bDay.getText()
+					+"')");
+			posted.executeUpdate();
+		}catch (Exception ex) {
+			System.out.println(ex);
 		}
-	else 
+		finally{System.out.println("Entry added.");}
+	}
+	
+/*	public static void post() throws Exception{
+		final String var1 = "John";
+		final String var2 = "Miller";
+		
+		try{
+			Connection con = getConnection();
+			PreparedStatement posted = con.prepareStatement("");
+		}
+	}
+*/	
+	private static String MYSQL_DRIVER= "com.mysql.jdbc.Driver";
+	private static String MYSQL_URL="jdbc:mysql://localhost:3306/ddt_movies?useSSl=false";
+	private static String user ="root";
+	private static String password="Mond1234";
+	private static java.sql.Connection con;
+	
+	public static Connection getConnection(){
+		
+		try{
+			Class.forName(MYSQL_DRIVER);
+			
+			con=  DriverManager.getConnection(MYSQL_URL,user,password);
+			
+			return con;
+		} catch(ClassNotFoundException ex){
+			System.out.println("ClassNotFoundException:\n"+ex.toString());
+			ex.printStackTrace();
+		}catch(SQLException ex){
+			System.out.println("SQlESception:\n"+ex.toString());
+			ex.printStackTrace();
+		}
+		return null;
+	}	
+	
+	//public void createPin1(int pin,HashSet Store) throws Exception{
+	public void createPin1() throws Exception{
+		try{
+			Connection con = getConnection();		
+			String query = "SELECT max(pin) as pin FROM customer";
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(query);
+			rs.next();
+						
+			String strPin = rs.getString("pin");
+			int Pin = Integer.valueOf(strPin);
+			++Pin;
+			pinn.setText("" + Pin);
+		} catch (Exception e){System.out.println(e);}
+//		finally{System.out.println("Function complete.");}
 
-createPin1(pin++, store);}
+		
+//		if (!store.contains(pin)) {
+//			if (10000 > pin) {
+//				pin++;
+				
+				//pinn.setText("" +String.valueOf(pin)+1 );
+//			}
+//			store.add(pin);
+
+//		}
+//	else 
+//createPin1(pin++, store);}
+//		Property<String> valueProperty;
+//		valueProperty.;
+//		Label myLabel = new Label("Start");
+//		myLabel.textProperty().bind(valueProperty);
+	}
+	
+//	public void onAddItem(ActionEvent event){
+//		Table entry = new Table(firstName, phoneNum,bDay, email, address, creditCard lastName);
+//	}
+	
+	public void clearForm(){
+	    firstName.clear();
+	    phone.clear();
+	    bDay.clear();
+	    email.clear();
+	    address.clear();
+	    creditCard.clear();
+	    lastName.clear();
+	}
 }
