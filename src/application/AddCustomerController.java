@@ -12,21 +12,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-//import javafx.beans.property.Property;
-//import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-//import javafx.fxml.FXMLLoader;
-//import javafx.scene.Parent;
-//import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-//import javafx.stage.Stage;
-
-//import javafx.scene.control.TableView;
-//import javafx.scene.control.TableColumn;
-
 
 public class AddCustomerController {
 	@FXML
@@ -107,8 +96,6 @@ public class AddCustomerController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 	
 		//System.out.println(customer.getAddress() +customer.getAddress() +);
 	}
@@ -144,14 +131,12 @@ public class AddCustomerController {
 					+"', '"+ email.getText()
 					+"', '"+ address.getText()
 					+"', '"+ creditCard.getText()
-					+"', '"+ exp_date.getText() //"2020-02-00"
+					+"', '"+ exp_date.getText()
 					+"', '"+ license.getText()
 					+"', '"+ bDay.getText()
 					+"')");
 			posted.executeUpdate();
-		}catch (Exception ex) {
-			System.out.println(ex);
-		}
+		}catch (Exception ex) {System.out.println(ex);}
 	
 
 //	@SuppressWarnings("rawtypes")
@@ -209,8 +194,6 @@ public class AddCustomerController {
 			++Pin;
 			pinn.setText("" + Pin);
 		} catch (Exception e){System.out.println(e);}
-//		finally{System.out.println("Function complete.");}
-
 		
 //		if (!store.contains(pin)) {
 //			if (10000 > pin) {
