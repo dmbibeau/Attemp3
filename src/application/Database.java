@@ -8,7 +8,6 @@ import java.beans.Statement;
 import java.sql.Connection;
 
 public class Database {
-<<<<<<< HEAD
 	
 /*private static String MYSQL_DRIVER= "com.mysql.jdbc.Driver";
 private static String MYSQL_URL="jdbc:mysql://172.19.5.9:3306/ddt_movies?useSSl=false";

@@ -25,6 +25,6 @@
             <TableColumn prefWidth="103.0" text="Telephone No." />
         </columns>
       </TableView>
-      <Button fx:id="Searchy" layoutX="366.0" layoutY="112.0" mnemonicParsing="false" onAction="#searchDB" text="Searchy" />
+
    </children>
 </AnchorPane>

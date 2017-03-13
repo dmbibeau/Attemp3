@@ -1,21 +1,16 @@
 package application;
 
-<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-//import java.util.HashSet;
-=======
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashSet;
->>>>>>> branch 'master' of https://github.com/dmbibeau/Attemp3
 
 //import javafx.beans.property.Property;
 //import javafx.beans.value.ObservableValue;
@@ -68,30 +63,28 @@ public class AddCustomerController {
     @FXML
     private TextField exp_date;
 
-	@FXML
-<<<<<<< HEAD
-	private Button addPin;
+	//@FXML
+	//private Button addPin;
 	
 //	HashSet<Integer> store = new HashSet<Integer>();
 	@FXML
-	public void generatePin(ActionEvent event) throws Exception {
-=======
+/*	public void generatePin(ActionEvent event) throws Exception {
 	public void checkNums(ActionEvent event){
 		String num=creditCard.getText();	
-		String ph= phoneNum.getText();
+		String ph= phone.getText();
 		if(num.length()>=16){
 			creditCard.setText("");
 			
 		}
 	
 		else if (ph.length()>=10){
-			phoneNum.setText("");
+			phone.setText("");
 		}
 		else {
 			create();
 		}
 			
-	}
+	}*/
 	public void create(){
 		@SuppressWarnings("unused")
 		int i =0;
@@ -102,7 +95,7 @@ public class AddCustomerController {
 		
 		try {
 			date = format.parse(o);
-		    customer = new Person(Integer.parseInt(pinn.getText()), lastName.getText(), firstName.getText(), creditCard.getText(), phoneNum.getText(), date, address.getText());
+//		    customer = new Person(Integer.parseInt(pinn.getText()), lastName.getText(), firstName.getText(), creditCard.getText(), phoneNum.getText(), date, address.getText());
 		    CustomerDB customerDB = new CustomerDB(customer);
 			try {
 				customerDB.addInfo();
@@ -123,7 +116,6 @@ public class AddCustomerController {
 	@FXML
 	public void generatePin(ActionEvent event) {
 		
->>>>>>> branch 'master' of https://github.com/dmbibeau/Attemp3
 		System.out.println(event.getSource());
 				try {
 					createPin1();	
@@ -140,7 +132,6 @@ public class AddCustomerController {
 		}
 
 	}
-<<<<<<< HEAD
 	public void submitEntry(ActionEvent event) throws Exception {
 		//System.out.println(event.getSource());
 		try{
@@ -160,27 +151,24 @@ public class AddCustomerController {
 			posted.executeUpdate();
 		}catch (Exception ex) {
 			System.out.println(ex);
-=======
+		}
 	
 
-	@SuppressWarnings("rawtypes")
-	public void createPin1(int pin) {
+//	@SuppressWarnings("rawtypes")
+//	public void createPin1(int pin) {
 		
 		/* 
 		 * 
 		 */
-		if (!store.contains(pin)) {
-			if (10000 > pin) {
-				pin++;
+//		if (!store.contains(pin)) {
+//			if (10000 > pin) {
+//				pin++;
 
-				pinn.setText("" +String.valueOf(pin) );
-			}
-			store.add(pin);
+//				pinn.setText("" +String.valueOf(pin) );
+//			}
+//			store.add(pin);
 
->>>>>>> branch 'master' of https://github.com/dmbibeau/Attemp3
-		}
-<<<<<<< HEAD
-		finally{System.out.println("Entry added.");}
+//		finally{System.out.println("Entry added.");}
 	}
 	
 	private static String MYSQL_DRIVER= "com.mysql.jdbc.Driver";
@@ -255,8 +243,3 @@ public class AddCustomerController {
 	    lastName.clear();
 	}
 }
-=======
-		
-	
-}
->>>>>>> branch 'master' of https://github.com/dmbibeau/Attemp3
