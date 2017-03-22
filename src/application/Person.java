@@ -44,6 +44,45 @@ public class Person {
 		return pin;
 	}
 
+	public void setPin(int pin) {
+		this.pin = pin;
+	}
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
+	}
+
+
+	public void setbDay(Date bDay) {
+		this.bDay = bDay;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public void setCreditCard(String creditCard) {
+		this.creditCard = creditCard;
+	}
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 
 	public String getFirstName() {
 		return firstName;

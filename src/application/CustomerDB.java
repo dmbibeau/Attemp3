@@ -4,7 +4,12 @@ import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.sql.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class CustomerDB {
 	Person a = new Person();
@@ -31,5 +36,31 @@ public class CustomerDB {
 		statement.setString(7, a.getAddress());
 		statement.execute();*/
 	}
+	CustomerDB(){
+		
+	}
 	
+	ObservableList<Person> findInfo(int ID){
+	try{
+		Connection con = Database.getConnection();
+		java.sql.Statement stmt = con.createStatement();
+		//PreparedStatement find = con.prepareStatement("SELECT surname FROM customer WHERE pin = 5;");
+		ResultSet rs = stmt.executeQuery("SELECT * FROM customer WHERE pin = " + ID);
+		Person person = new Person();
+		ArrayList<Person> people = new ArrayList<>();
+		while (rs.next()){
+			int pin = rs.getInt("pin");
+			person.setPin(pin);
+			people.add(person);
+		}
+		
+		ObservableList<Person> oListPerson = FXCollections.observableArrayList(people);
+		return oListPerson;
+		//phone.setCellValueFactory(value);
+		//System.out.println(ID.getText());
+		
+		//find.executeUpdate();
+	}catch (Exception ex) {System.out.println(ex);}
+	return null;
+	}
 }
