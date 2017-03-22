@@ -10,38 +10,38 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class AddCustomerController {
-	// private java.sql.Connection con;
+public class AddEmployeeController {
 
-	@FXML
-	private Label pinn;
-	@FXML
-	private Label addpinn;
-	
 	// DEFINE FORM
-    @FXML
-    private TextField firstName;
+	@FXML
+	private TextField firstName;
 
-    @FXML
-   private TextField lastName;
-
+	@FXML
+	private TextField lastName;
+	
     @FXML
     private TextField phone;
-
-    @FXML
-    private TextField email;
 
     @FXML
     private TextField address;
 
     @FXML
-    private TextField creditCard;
+    private TextField payRate;
+
+    @FXML
+    private TextField position;
+
+    @FXML
+    private TextField dob;
+
+    @FXML
+    private Label empID;
     
-    @FXML
-    private TextField exp_date;
+//    @FXML
+//    private TextField exp_date;
 	    
-    @FXML
-    private TextField bDay;
+//    @FXML
+//    private TextField bDay;
 
 	@FXML
 	public void generatePin(ActionEvent event) {	
@@ -55,15 +55,14 @@ public class AddCustomerController {
 		System.out.println(event.getSource());
 		try {
 			Connection con = Database.getConnection();		
-			PreparedStatement posted = con.prepareStatement("INSERT INTO customer(name, surname, phone, email, address, credit_card, exp_date, dob) VALUES "
+			PreparedStatement posted = con.prepareStatement("INSERT INTO employee(name, surname, phone, address, pay, position, dob) VALUES "
 					+ "('" + firstName.getText()
 					+"', '"+ lastName.getText()      
 					+"', '"+ phone.getText()         
-					+"', '"+ email.getText()
 					+"', '"+ address.getText()
-					+"', '"+ creditCard.getText()
-					+"', '"+ exp_date.getText()
-					+"', '"+ bDay.getText()
+					+"', '"+ payRate.getText()
+					+"', '"+ position.getText()
+					+"', '"+ dob.getText()
 					+"')");
 			posted.executeUpdate();
 		}catch (Exception ex) {System.out.println(ex);}
@@ -72,25 +71,25 @@ public class AddCustomerController {
 	public void createPin1() throws Exception{
 		try{
 			Connection con = Database.getConnection();		
-			String query = "SELECT max(pin) as pin FROM customer";
+			String query = "SELECT max(empid) as empid FROM employee";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(query);
 			rs.next();
 						
-			String strPin = rs.getString("pin");
-			int Pin = Integer.valueOf(strPin);
-			++Pin;
-			pinn.setText("" + Pin);
+			String strID = rs.getString("empid");
+			int id = Integer.valueOf(strID);
+			++id;
+			empID.setText("" + id);
 		} catch (Exception e){System.out.println(e);}		
 	}
 	
 	public void clearForm(){
 	    firstName.clear();
-	    phone.clear();
-	    bDay.clear();
-	    email.clear();
-	    address.clear();
-	    creditCard.clear();
 	    lastName.clear();
+	    phone.clear();
+	    address.clear();
+	    payRate.clear();
+	    position.clear();
+	    dob.clear();
 	}
 }
