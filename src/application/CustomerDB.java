@@ -44,11 +44,20 @@ public class CustomerDB {
 	try{
 		Connection con = Database.getConnection();
 		java.sql.Statement stmt = con.createStatement();
-		//PreparedStatement find = con.prepareStatement("SELECT surname FROM customer WHERE pin = 5;");
 		ResultSet rs = stmt.executeQuery("SELECT * FROM customer WHERE pin = " + ID);
 		Person person = new Person();
 		ArrayList<Person> people = new ArrayList<>();
 		while (rs.next()){
+			String fName = rs.getString("name");
+		System.out.println(fName);
+			person.setFirstName(fName);
+			String lName = rs.getNString("surname");
+		System.out.println(lName);
+			person.setLastName(lName);
+			String address = rs.getString("address");
+			person.setAddress(address);
+			String phone = rs.getString("phone");
+			person.setPhoneNum(phone);
 			int pin = rs.getInt("pin");
 			person.setPin(pin);
 			people.add(person);

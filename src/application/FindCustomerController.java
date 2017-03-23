@@ -33,16 +33,16 @@ public class FindCustomerController {
     private TableView<Person> table;
 
     @FXML
-    private TableColumn<Person, Integer> first;
+    private TableColumn<Person, String> first;
 
     @FXML
-    private TableColumn<Person, Integer> last;
+    private TableColumn<Person, String> last;
 
     @FXML
     private TableColumn<Person, Integer> pin;
 
     @FXML
-    private TableColumn<Person, String> adress;
+    private TableColumn<Person, String> address;
 
     @FXML
     private TableColumn<Person, String> phone;
@@ -53,8 +53,12 @@ public class FindCustomerController {
 		int id = Integer.parseInt(ID.getText());
 		
 		ObservableList<Person> custout = customernew.findInfo(id);
-		System.out.println(custout.get(0));
+	System.out.println(custout.get(0).toString());
+		first.setCellValueFactory(new PropertyValueFactory<Person, String>("firstName"));
+		last.setCellValueFactory(new PropertyValueFactory<Person, String>("lastName"));
 		pin.setCellValueFactory(new PropertyValueFactory<Person, Integer>("Pin"));
+		address.setCellValueFactory(new PropertyValueFactory<Person, String>("Address"));
+		phone.setCellValueFactory(new PropertyValueFactory<Person, String>("phoneNum"));
 		table.setItems(custout);
 	}
  //   @FXML

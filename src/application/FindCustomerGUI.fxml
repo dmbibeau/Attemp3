@@ -17,7 +17,7 @@
           <TableColumn fx:id="first" prefWidth="75.0" text="First" />
           <TableColumn fx:id="last" prefWidth="75.0" text="Last Name" />
             <TableColumn fx:id="pin" prefWidth="75.0" text="PIN" />
-            <TableColumn fx:id="adress" prefWidth="171.0" text="Address" />
+            <TableColumn fx:id="address" prefWidth="171.0" text="Address" />
             <TableColumn fx:id="phone" prefWidth="103.0" text="Telephone No." />
         </columns>
       </TableView>

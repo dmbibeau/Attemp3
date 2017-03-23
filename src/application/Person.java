@@ -35,88 +35,63 @@ public class Person {
 		bDay = b_Day;
 		email = null;//to be fixed later
 		address = adress;
-		creditCard=CreditCard;
-		
+		creditCard=CreditCard;		
 	}
 
 
 	public int getPin() {
 		return pin;
 	}
-
 	public void setPin(int pin) {
 		this.pin = pin;
 	}
 
-
+	public String getFirstName() {
+		return firstName;
+	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
-
+	public String getPhoneNum() {
+		return phoneNum;
+	}
 	public void setPhoneNum(String phoneNum) {
 		this.phoneNum = phoneNum;
 	}
 
-
+	public Date getbDay() {
+		return bDay;
+	}
 	public void setbDay(Date bDay) {
 		this.bDay = bDay;
 	}
 
-
+	public String getEmail() {
+		return email;
+	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
+	public String getAddress() {
+		return address;
+	}
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
-
+	public String getCreditCard() {
+		return creditCard;
+	}
 	public void setCreditCard(String creditCard) {
 		this.creditCard = creditCard;
 	}
 
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-
-	public String getPhoneNum() {
-		return phoneNum;
-	}
-
-
-	public Date getbDay() {
-		return bDay;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public String getAddress() {
-		return address;
-	}
-
-
-	public String getCreditCard() {
-		return creditCard;
-	}
-
-
 	public String getLastName() {
 		return lastName;
 	}
-	
-
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 }

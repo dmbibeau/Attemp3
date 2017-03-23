@@ -26,9 +26,8 @@ public class HelloController {
 	@FXML	
 	public void startFindUI(ActionEvent event) {
 		try {
-		
 			Parent root= FXMLLoader.load(getClass().getResource("FindCustomerGUI.fxml"));
-			Scene scene = new Scene(root, 400,400);
+			Scene scene = new Scene(root);
 			//scene.getStylesheets().add(getClass().getResource("CustomersInfo.fxml").toExternalForm());
 			Stage stage = new Stage();
 			stage.setTitle("Find Customer");
