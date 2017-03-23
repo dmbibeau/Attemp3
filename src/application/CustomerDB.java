@@ -49,10 +49,8 @@ public class CustomerDB {
 		ArrayList<Person> people = new ArrayList<>();
 		while (rs.next()){
 			String fName = rs.getString("name");
-		System.out.println(fName);
 			person.setFirstName(fName);
 			String lName = rs.getNString("surname");
-		System.out.println(lName);
 			person.setLastName(lName);
 			String address = rs.getString("address");
 			person.setAddress(address);

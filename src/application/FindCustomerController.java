@@ -53,11 +53,10 @@ public class FindCustomerController {
 		int id = Integer.parseInt(ID.getText());
 		
 		ObservableList<Person> custout = customernew.findInfo(id);
-	System.out.println(custout.get(0).toString());
 		first.setCellValueFactory(new PropertyValueFactory<Person, String>("firstName"));
 		last.setCellValueFactory(new PropertyValueFactory<Person, String>("lastName"));
-		pin.setCellValueFactory(new PropertyValueFactory<Person, Integer>("Pin"));
-		address.setCellValueFactory(new PropertyValueFactory<Person, String>("Address"));
+		pin.setCellValueFactory(new PropertyValueFactory<Person, Integer>("pin"));
+		address.setCellValueFactory(new PropertyValueFactory<Person, String>("address"));
 		phone.setCellValueFactory(new PropertyValueFactory<Person, String>("phoneNum"));
 		table.setItems(custout);
 	}
