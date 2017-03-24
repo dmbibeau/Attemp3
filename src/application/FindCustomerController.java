@@ -60,25 +60,4 @@ public class FindCustomerController {
 		phone.setCellValueFactory(new PropertyValueFactory<Person, String>("phoneNum"));
 		table.setItems(custout);
 	}
- //   @FXML
- //   void searchDB(ActionEvent event) {
- //   	String query = ID.getText();
-
-
-//    @FXML
- //   private Button Searchy;
-
-//    @FXML
-//    void searchDB(ActionEvent event) {
-    	
-//    	String query = ID.getText();
-    	
-    	
-
- //   }
-    @FXML	
-	public void getName(ActionEvent event) {
-
-	
-		}
-	}
+}
