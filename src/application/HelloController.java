@@ -51,4 +51,18 @@ public class HelloController {
 			e.printStackTrace();
 		}
 	}
+	@FXML	
+	public void startFindEmpUI(ActionEvent event) {
+		try {
+			Parent root= FXMLLoader.load(getClass().getResource("EmployeeSearchGUI.fxml"));
+			Scene scene = new Scene(root);
+			//scene.getStylesheets().add(getClass().getResource("CustomersInfo.fxml").toExternalForm());
+			Stage stage = new Stage();
+			stage.setTitle("Employee Search");
+			stage.setScene(scene);
+			stage.show();			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

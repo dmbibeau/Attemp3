@@ -4,10 +4,96 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Date;
 
 import javafx.scene.control.TextField;
 
+
+
 public class Employee {
+	public String getfName() {
+		return fName;
+	}
+
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+
+	public String getlName() {
+		return lName;
+	}
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
+
+	public int getPin() {
+		return pin;
+	}
+
+	public void setPin(int pin) {
+		this.pin = pin;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public double getPay() {
+		return pay;
+	}
+
+	public void setPay(double pay) {
+		this.pay = pay;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public Date getBDay() {
+		return BDay;
+	}
+
+	public void setBDay(Date bDay) {
+		BDay = bDay;
+	}
+
+
+
+
+	String fName;
+
+	String lName;
+
+	int pin;
+
+	String phone;
+
+	String address;
+
+	double pay;
+
+	String position;
+
+	Date BDay;
+	
 	Employee(){
 	}
 	
@@ -27,6 +113,9 @@ public class Employee {
 			posted.executeUpdate();
 		}catch (Exception ex) {System.out.println(ex);}
 	}
+	
+	
+	
 	
 	public static ResultSet getLastEmpID(){
 		try{
