@@ -12,7 +12,7 @@ public class HelloController {
 	void handleButton(ActionEvent ae){
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("AddCustomerGUI.fxml"));
-			Scene scene = new Scene(root,800,800);
+			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage.setTitle("Add Customer");
@@ -26,16 +26,41 @@ public class HelloController {
 	@FXML	
 	public void startFindUI(ActionEvent event) {
 		try {
-		
 			Parent root= FXMLLoader.load(getClass().getResource("FindCustomerGUI.fxml"));
-			Scene scene = new Scene(root, 400,400);
+			Scene scene = new Scene(root);
 			//scene.getStylesheets().add(getClass().getResource("CustomersInfo.fxml").toExternalForm());
 			Stage stage = new Stage();
 			stage.setTitle("Find Customer");
 			stage.setScene(scene);
-			stage.show();
-			
-			
+			stage.show();			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML	
+	public void startAddEmpGUI(ActionEvent event) {
+		try {		
+			Parent root= FXMLLoader.load(getClass().getResource("AddEmployeeGUI.fxml"));
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();
+			stage.setTitle("Add Employee");
+			stage.setScene(scene);
+			stage.show();			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@FXML	
+	public void startFindEmpUI(ActionEvent event) {
+		try {
+			Parent root= FXMLLoader.load(getClass().getResource("EmployeeSearchGUI.fxml"));
+			Scene scene = new Scene(root);
+			//scene.getStylesheets().add(getClass().getResource("CustomersInfo.fxml").toExternalForm());
+			Stage stage = new Stage();
+			stage.setTitle("Employee Search");
+			stage.setScene(scene);
+			stage.show();			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

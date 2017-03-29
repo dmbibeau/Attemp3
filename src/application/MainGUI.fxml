@@ -9,8 +9,10 @@
          <children>
             <AnchorPane layoutX="65.0" layoutY="8.0" prefHeight="261.0" prefWidth="329.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button layoutX="123.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleButton" text="Add Customer" />
-                  <Button layoutX="123.0" layoutY="154.0" mnemonicParsing="false" onAction="#startFindUI" text="Find Customer" />
+                  <Button layoutX="123.0" layoutY="43.0" mnemonicParsing="false" onAction="#handleButton" text="Add Customer" />
+                  <Button layoutX="123.0" layoutY="93.0" mnemonicParsing="false" onAction="#startFindUI" text="Find Customer" />
+                  <Button layoutX="123.0" layoutY="138.0" mnemonicParsing="false" onAction="#startAddEmpGUI" text="Add Employee" />
+                  <Button layoutX="123.0" layoutY="185.0" mnemonicParsing="false" onAction="#startFindEmpUI" prefHeight="25.0" prefWidth="93.0" text="Find Employee" />
                </children>
             </AnchorPane>
          </children>
