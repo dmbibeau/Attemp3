@@ -12,13 +12,13 @@
       <Button fx:id="findCust" layoutX="203.0" layoutY="68.0" mnemonicParsing="false" onAction="#submitEntry" text="Find Customer" />
       <TextField fx:id="ID" layoutX="176.0" layoutY="29.0" />
       <Label layoutX="76.0" layoutY="33.0" text="Identification" />
-      <TableView layoutX="144.0" layoutY="263.0" prefHeight="300.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <TableView fx:id="table" layoutX="144.0" layoutY="263.0" prefHeight="300.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="First" />
-          <TableColumn prefWidth="75.0" text="Last Name" />
-            <TableColumn prefWidth="75.0" text="PIN" />
-            <TableColumn prefWidth="171.0" text="Address" />
-            <TableColumn prefWidth="103.0" text="Telephone No." />
+          <TableColumn fx:id="first" prefWidth="75.0" text="First" />
+          <TableColumn fx:id="last" prefWidth="75.0" text="Last Name" />
+            <TableColumn fx:id="pin" prefWidth="75.0" text="PIN" />
+            <TableColumn fx:id="address" prefWidth="171.0" text="Address" />
+            <TableColumn fx:id="phone" prefWidth="103.0" text="Telephone No." />
         </columns>
       </TableView>
 
