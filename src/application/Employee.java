@@ -6,24 +6,26 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Date;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.scene.control.TextField;
 
 
 
 public class Employee {
-	public String getfName() {
+	public String getFName() {
 		return fName;
 	}
 
-	public void setfName(String fName) {
+	public void setFName(String fName) {
 		this.fName = fName;
 	}
 
-	public String getlName() {
+	public String getLName() {
 		return lName;
 	}
 
-	public void setlName(String lName) {
+	public void setLName(String lName) {
 		this.lName = lName;
 	}
 

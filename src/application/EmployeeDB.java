@@ -46,9 +46,9 @@ public class EmployeeDB {
 		ArrayList<Employee> employees = new ArrayList<>();
 		while (rs.next()){
 			String fName = rs.getString("name");
-			employee.setfName(fName);
+			employee.setFName(fName);
 			String lName = rs.getNString("surname");
-			employee.setlName(lName);
+			employee.setLName(lName);
 			String address = rs.getString("address");
 			employee.setAddress(address);
 			String phone = rs.getString("phone");
@@ -76,14 +76,14 @@ public class EmployeeDB {
 		try{
 			Connection con = Database.getConnection();
 			java.sql.Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM employee WHERE surname = " + id);
+			ResultSet rs = stmt.executeQuery("SELECT * FROM employee WHERE surname = '" + id+"'");
 			Employee employee = new Employee();
 			ArrayList<Employee> employees = new ArrayList<>();
 			while (rs.next()){
 				String fName = rs.getString("name");
-				employee.setfName(fName);
+				employee.setFName(fName);
 				String lName = rs.getNString("surname");
-				employee.setlName(lName);
+				employee.setLName(lName);
 				String address = rs.getString("address");
 				employee.setAddress(address);
 				String phone = rs.getString("phone");
@@ -91,9 +91,9 @@ public class EmployeeDB {
 				int pin = rs.getInt("empid");
 				employee.setPin(pin);
 				String position = rs.getString("position");
-				employee.setPin(pin);
+				employee.setPosition(position);
 				double pay = rs.getDouble("pay");
-				employee.setPin(pin);
+				employee.setPay(pay);
 				employees.add(employee);
 			}
 			

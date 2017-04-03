@@ -13,7 +13,8 @@ public class Database {
 	//private String user ="root";
 	//private String password="God0fmadnes$";
 	private static String user ="root";
-	private static String password="Mond1234";
+	//private static String password="Mond1234";
+	private static String password="Marie@21";
 	private static java.sql.Connection con;
 
 	public static Connection getConnection(){
