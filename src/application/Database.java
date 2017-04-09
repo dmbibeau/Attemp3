@@ -51,7 +51,7 @@ public class Database {
 		finally{System.out.println("Function complete.");}		
 	}
 	
-	public static void postCust() throws Exception{
+	/*public static void postCust() throws Exception{
 		try{
 				Connection con = getConnection();
 				PreparedStatement posted = con.prepareStatement("INSERT INTO customer(name, surname, phone, email, address, credit_card, exp_date, dob) VALUES "
@@ -61,7 +61,7 @@ public class Database {
 		finally {
 			System.out.println("Insert Completed");
 		}
-	}	
+	}*/	
 	
 	public static void createEmpTable() throws Exception{
 		try{
@@ -81,7 +81,7 @@ public class Database {
 		finally{System.out.println("Function complete.");}		
 	}
 	
-	public static void postEmp() throws Exception{
+	/*public static void postEmp() throws Exception{
 		try{
 				Connection con = getConnection();
 				PreparedStatement posted = con.prepareStatement("INSERT INTO employee(name, surname, phone, address, pay, position, dob) VALUES "
@@ -91,7 +91,7 @@ public class Database {
 		finally {
 			System.out.println("Insert Completed");
 		}
-	}	
+	}*/	
 	public static void createMovieTable() throws Exception{
 		try{
 			Connection con = getConnection();
@@ -104,7 +104,38 @@ public class Database {
 				+ "language varchar(255), "
 				+ "format varchar(50), "
 				+ "genre varchar(50), "
+				+ "rating varchar(1), "
+				+ "price double(10), "
+				+ "quantity varchar (1), "
 				+ "PRIMARY KEY(barcode))");
+			create.executeUpdate();
+		} catch (Exception e){System.out.println(e);}
+		finally{System.out.println("Function complete.");}		
+	}
+	public static void createTransactionTable() throws Exception{
+		try{
+			Connection con = getConnection();
+			PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS transaction("
+				+ "code int (255) NOT NULL AUTO_INCREMENT, "
+				+ "pin int(4), "
+				+ "barcode int (12), "
+				+ "rent_date date, "
+				+ "return_date date, "
+				+ "PRIMARY KEY(code))");
+			create.executeUpdate();
+		} catch (Exception e){System.out.println(e);}
+		finally{System.out.println("Function complete.");}		
+	}
+	public static void createScheduleTable() throws Exception{
+		try{
+			Connection con = getConnection();
+			PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS schedule("
+				+ "work_day date, "
+				+ "empin int(4), "
+				+ "start time, "
+				+ "end time, "
+				+ "holiday boolean, "
+				+ "PRIMARY KEY(work_day))");
 			create.executeUpdate();
 		} catch (Exception e){System.out.println(e);}
 		finally{System.out.println("Function complete.");}		

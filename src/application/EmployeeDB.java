@@ -56,9 +56,9 @@ public class EmployeeDB {
 			int pin = rs.getInt("empid");
 			employee.setPin(pin);
 			String position = rs.getString("position");
-			employee.setPin(pin);
+			employee.setPosition(position);
 			double pay = rs.getDouble("pay");
-			employee.setPin(pin);
+			employee.setPay(pay);
 			employees.add(employee);
 		}
 		

@@ -30,16 +30,24 @@ public class Main extends Application {
 		 * if the table isn't already created. But you NEED a 
 		 * database called ddt_movies*/
 		Database.createCustTable();
-		/* The following line will add a line to the table customer. */
+		/* The following line will add a line to the table customer. 
 		Database.postCust();
-		/* The following line will create a table called employee
+		 The following line will create a table called employee
 		 * if the table isn't already created. But you NEED a 
 		 * database called ddt_movies*/
 		Database.createEmpTable();
 		/* The following line will add a line to the table customer. */
-		Database.postEmp();
+		//Database.postEmp();
 		//The following line of code will add the movie table.
 		Database.createMovieTable();
+		/*The following line will create a table called transaction
+		 * if the table isn't already created. But you NEED a 
+		 * database called ddt_movies*/
+		Database.createTransactionTable();
+		/*The following line will create a table called schedule
+		 * if the table isn't already created. But you NEED a 
+		 * database called ddt_movies*/
+		Database.createScheduleTable();
 		
 		launch(args);
 	}

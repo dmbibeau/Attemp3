@@ -29,6 +29,9 @@ public class AddCustomerController {
     private TextField phone;
 
     @FXML
+    private Label alert;
+    
+    @FXML
     private TextField email;
 
     @FXML
@@ -56,7 +59,32 @@ public class AddCustomerController {
 	
 	public void submitEntry(ActionEvent event) {
 		// We can add validation here
-		Person.addCust(firstName, lastName, phone, email, address, creditCard, exp_date, bDay);
+		if(pinn.getText().isEmpty()||
+				bDay.getText().isEmpty()||
+				exp_date.getText().isEmpty()||
+				creditCard.getText().isEmpty()||
+				address.getText().isEmpty()||
+				email.getText().isEmpty()||
+				phone.getText().isEmpty()||
+				lastName.getText().isEmpty()||
+				firstName.getText().isEmpty()){/*Null validation for all feilds*/ 
+			alert.setText("One or more feilds are empty and make sure PIN is filled.");
+				
+		} 
+		else{
+			if(creditCard.getText().length()==16){/*Credit card must be equal to 16 charaters long*/ 
+					if(creditCard.getText().contains("abcdefghijkllmnopqrstuvwxyz")){
+						if(email.getText().endsWith("@g.fmarion.edu")||email.getText().endsWith("@gmail.com")){
+							if(phone.getText().length()==10){
+								if(phone.getText().contains("abcdefghijklmnopqrstuvwxyz")){
+									Person.addCust(firstName, lastName, phone, email, address, creditCard, exp_date, bDay);
+								}
+							}
+						}
+						
+					}
+				} 
+		}
 	}
 		
 	public void clearForm(){
