@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 public class Movie {
 	
 	Movie(){}
-	private String barcode;
+	private int barcode;
 	
 	private String title;
 	
@@ -21,11 +21,11 @@ public class Movie {
 	
 	private String actors;
 	
-	public String getBarcode() {
+	public Integer getBarcode() {
 		return barcode;
 	}
 
-	public void setBarcode(String barcode) {
+	public void setBarcode(int barcode) {
 		this.barcode = barcode;
 	}
 
@@ -92,7 +92,7 @@ public class Movie {
 			TextField actors2, TextField year2, TextField format2, TextField language2) {
 		try {
 			Connection con = Database.getConnection();		
-			PreparedStatement posted = con.prepareStatement("INSERT INTO movies(barcode, title, director, genre, actors, year, format, language) VALUES "
+			PreparedStatement posted = con.prepareStatement("INSERT INTO movie(barcode, title, director, genre, actors, year, format, language) VALUES "
 					+ "('" + barcode2.getText()
 					+"', '"+ title2.getText()      
 					+"', '"+ director2.getText()
@@ -106,5 +106,4 @@ public class Movie {
 		}catch (Exception ex) {System.out.println(ex);}
 		
 	}
-
 }

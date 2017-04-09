@@ -4,6 +4,6 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Dianna/Downloads/mysql-connector-java-5.1.41/mysql-connector-java-5.1.41/mysql-connector-java-5.1.41-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Thomasbellon/Documents/CS Documents/mysql-connector-java-5.1.41/mysql-connector-java-5.1.41-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

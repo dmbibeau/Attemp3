@@ -38,6 +38,8 @@ public class Main extends Application {
 		Database.createEmpTable();
 		/* The following line will add a line to the table customer. */
 		Database.postEmp();
+		//The following line of code will add the movie table.
+		Database.createMovieTable();
 		
 		launch(args);
 	}

@@ -10,11 +10,11 @@ public class Database {
 
 	private static String MYSQL_DRIVER= "com.mysql.jdbc.Driver";
 	private static String MYSQL_URL="jdbc:mysql://localhost:3306/ddt_movies?autoReconnect=true&useSSL=false";
-	//private String user ="root";
-	//private String password="God0fmadnes$";
 	private static String user ="root";
+	private static String password="god0fmadnes$";
+	//private static String user ="root";
 	//private static String password="Mond1234";
-	private static String password="Marie@21";
+	//private static String password="Marie@21";
 	private static java.sql.Connection con;
 
 	public static Connection getConnection(){
@@ -92,4 +92,21 @@ public class Database {
 			System.out.println("Insert Completed");
 		}
 	}	
+	public static void createMovieTable() throws Exception{
+		try{
+			Connection con = getConnection();
+			PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS movie("
+				+ "year int (14), "
+				+ "title varchar(255), "
+				+ "director varchar(100), "
+				+ "barcode bigint(12), "
+				+ "actors varchar(255), "
+				+ "language varchar(255), "
+				+ "format varchar(50), "
+				+ "genre varchar(50), "
+				+ "PRIMARY KEY(barcode))");
+			create.executeUpdate();
+		} catch (Exception e){System.out.println(e);}
+		finally{System.out.println("Function complete.");}		
+	}
 }

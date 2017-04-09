@@ -65,4 +65,31 @@ public class HelloController {
 			e.printStackTrace();
 		}
 	}
+	@FXML	
+	public void startAddMovieGUI(ActionEvent event) {
+		try {		
+			Parent root= FXMLLoader.load(getClass().getResource("AddMovieGUI.fxml"));
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();
+			stage.setTitle("Add Movie");
+			stage.setScene(scene);
+			stage.show();			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@FXML	
+	public void startMovieFindUI(ActionEvent event) {
+		try {
+			Parent root= FXMLLoader.load(getClass().getResource("FindMovieGUI.fxml"));
+			Scene scene = new Scene(root);
+			//scene.getStylesheets().add(getClass().getResource("CustomersInfo.fxml").toExternalForm());
+			Stage stage = new Stage();
+			stage.setTitle("Find Movie");
+			stage.setScene(scene);
+			stage.show();			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
