@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 public class Movie {
 	
 	Movie(){}
-	private String barcode;
+	private int barcode;
 	
 	private String title;
 	
@@ -21,11 +21,11 @@ public class Movie {
 	
 	private String actors;
 	
-	public String getBarcode() {
+	public Integer getBarcode() {
 		return barcode;
 	}
 
-	public void setBarcode(String barcode) {
+	public void setBarcode(int barcode) {
 		this.barcode = barcode;
 	}
 

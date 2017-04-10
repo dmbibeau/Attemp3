@@ -9,7 +9,7 @@ import javafx.collections.ObservableList;
 
 public class EmployeeDB {
 	
-	EmployeeDB(){
+	public EmployeeDB(){
 		
 	}
 	
@@ -37,7 +37,7 @@ public class EmployeeDB {
 		statement.setString(7, a.getAddress());
 		statement.execute();*/
 	}
-	ObservableList<Employee> findInfoInt(int ID){
+	public ObservableList<Employee> findInfoInt(int ID){
 	try{
 		Connection con = Database.getConnection();
 		java.sql.Statement stmt = con.createStatement();
@@ -56,9 +56,9 @@ public class EmployeeDB {
 			int pin = rs.getInt("empid");
 			employee.setPin(pin);
 			String position = rs.getString("position");
-			employee.setPin(pin);
+			employee.setPosition(position);
 			double pay = rs.getDouble("pay");
-			employee.setPin(pin);
+			employee.setPay(pay);
 			employees.add(employee);
 		}
 		

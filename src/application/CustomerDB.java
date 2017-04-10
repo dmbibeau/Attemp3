@@ -36,11 +36,11 @@ public class CustomerDB {
 		statement.setString(7, a.getAddress());
 		statement.execute();*/
 	}
-	CustomerDB(){
+	public CustomerDB(){
 		
 	}
 	
-	ObservableList<Person> findInfo(int ID){
+	public ObservableList<Person> findInfo(int ID){
 	try{
 		Connection con = Database.getConnection();
 		java.sql.Statement stmt = con.createStatement();
