@@ -48,7 +48,7 @@ public class AddEmployeeController {
     @FXML
     private Label empID;
 
-	@FXML
+/*	@FXML
 	public void generatePin(ActionEvent event) throws SQLException {	
 		ResultSet rs = Employee.getLastEmpID();
 		rs.next();
@@ -56,7 +56,7 @@ public class AddEmployeeController {
 		int id = Integer.valueOf(strID);
 		++id;
 		empID.setText("" + id);
-	}
+	}*/
 	
 	public void submitEntry(ActionEvent event) throws Exception {
 		// We can add validation here
@@ -94,7 +94,7 @@ public class AddEmployeeController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} );
+		});
 	}
 	
 	private void selectNext(Object selection) throws IOException {

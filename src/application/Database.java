@@ -21,7 +21,7 @@ public class Database {
 	//private String user ="root";
 	//private String password="God0fmadnes$";
 	private static String user ="root";
-	private static String password="Mond1234";
+	private static String password="Pass!@#$";
 	//private static String password="Marie@21";
 	private static java.sql.Connection con;
 
@@ -137,8 +137,8 @@ public class Database {
 				+ "format varchar(50), "
 				+ "genre varchar(50), "
 				+ "rating varchar(1), "
-				+ "price double(10), "
-				+ "quantity varchar (1), "
+				+ "price double(10,2), "
+				+ "quantity varchar(1), "
 				+ "PRIMARY KEY(barcode))");
 			create.executeUpdate();
 		} catch (Exception e){System.out.println(e);}
