@@ -9,11 +9,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddCustomerController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddCustomerController">
 	<children>
     	<ChoiceBox fx:id="selectionBox" layoutX="10.0" layoutY="60.0" prefWidth="150.0" AnchorPane.leftAnchor="10.0" />
-    	<AnchorPane layoutX="200.0" prefHeight="700.0" prefWidth="600.0">
-        	<children>         
+    	<AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="600.0">
+        	<children>
             	<Label layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" text="Name" />
                 <TextField fx:id="firstName" layoutX="100.0" layoutY="10.0" promptText="Firstname" />
                

@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Date;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+//import javafx.beans.property.SimpleStringProperty;
+//import javafx.beans.property.StringProperty;
 import javafx.scene.control.TextField;
 
 

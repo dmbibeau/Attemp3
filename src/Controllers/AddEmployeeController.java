@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
 
 public class AddEmployeeController {
 
-	ObservableList<String> selectionList = FXCollections.observableArrayList("Select", "Add Customer", "Find Customer", "Add Employee", "Find Employee", "Add DVD", "Find DVD");
+	ObservableList<String> selectionList = FXCollections.observableArrayList("Select", "Add Customer", "Find Customer", "Add Employee", "Find Employee", "Add Movie", "Find Movie");
 	@FXML
 	private ChoiceBox<String> selectionBox;
 
@@ -104,8 +104,8 @@ public class AddEmployeeController {
 			case "Find Customer" 	: Main.showFindCustMenu(); break;
 			case "Add Employee" 	: Main.showAddEmpMenu(); break;
 			case "Find Employee" 	: Main.showFindEmpMenu(); break;
-			case "Add DVD" 			: Main.showAddMovieMenu(); break;
-			case "Find DVD" 		: Main.showFindMovieMenu(); break;
+			case "Add Movie" 			: Main.showAddMovieMenu(); break;
+			case "Find Movie" 		: Main.showFindMovieMenu(); break;
 			default : System.out.println("Error! Unknown selection!");
 			}
 	}

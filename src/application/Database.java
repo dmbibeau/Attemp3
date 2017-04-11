@@ -177,7 +177,7 @@ public class Database {
 	//fillEmpTable is not working
 	public static void fillEmpTable() throws SQLException {
 		ObservableList<Employee> data = FXCollections.observableArrayList();
-		TableView tableview = new TableView();
+		//TableView tableview = new TableView<Employee>();
 		data = FXCollections.observableArrayList();
 		
 		String query = "select * from employee";

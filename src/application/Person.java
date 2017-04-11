@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Date;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+//import javafx.fxml.FXML;
+//import javafx.scene.control.Button;
+//import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class Person {

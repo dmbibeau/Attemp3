@@ -5,16 +5,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddEmployeeController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddEmployeeController">
 	<children>
     	<ChoiceBox fx:id="selectionBox" layoutX="10.0" layoutY="60.0" prefWidth="150.0" AnchorPane.leftAnchor="10.0" />
-      	<AnchorPane layoutX="200.0" prefHeight="700.0" prefWidth="600.0">
+      	<AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="600.0">
         	<children>
-            	<Label layoutX="10.0" layoutY="10.0" text="First Name" />
-	            <TextField fx:id="firstName" layoutX="100.0" layoutY="10.0" />
-
-	            <Label layoutX="300.0" layoutY="10.0" text="Last Name" />
-    	        <TextField fx:id="lastName" layoutX="350.0" layoutY="10.0" />
+            	<Label layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" text="Name" />
+                <TextField fx:id="firstName" layoutX="100.0" layoutY="10.0" promptText="Firstname" />
+               
+                <TextField fx:id="lastName" layoutX="300.0" layoutY="10.0" promptText="Lastname" />
 
 	            <Label layoutX="10.0" layoutY="50.0" prefHeight="25.0" text="DOB" />
     	        <TextField fx:id="dob" layoutX="100.0" layoutY="50.0" />

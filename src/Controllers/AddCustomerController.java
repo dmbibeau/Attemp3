@@ -19,15 +19,12 @@ import javafx.scene.control.TextField;
 
 public class AddCustomerController {
 
-	ObservableList<String> selectionList = FXCollections.observableArrayList("Select", "Add Customer", "Find Customer", "Add Employee", "Find Employee", "Add DVD", "Find DVD");
+	ObservableList<String> selectionList = FXCollections.observableArrayList("Select", "Add Customer", "Find Customer", "Add Employee", "Find Employee", "Add Movie", "Find Movie");
 	@FXML
 	private ChoiceBox<String> selectionBox;
 
 	@FXML
 	private Label pinn;
-	
-//	@FXML
-//	private Label addpinn;
 	
 	@FXML
 	private Label alert;
@@ -56,7 +53,7 @@ public class AddCustomerController {
     @FXML
     private TextField bDay;
 
-	@FXML
+/*	@FXML
 	public void generatePin(ActionEvent event) throws SQLException {
 		ResultSet rs = Person.getLastPin();
 		rs.next();
@@ -65,7 +62,7 @@ public class AddCustomerController {
 		int Pin = Integer.valueOf(strPin);
 		++Pin;
 		pinn.setText("" + Pin);
-	}
+	}*/
 	
 	public void submitEntry(ActionEvent event) {
 		// We can add validation here
@@ -84,11 +81,13 @@ public class AddCustomerController {
 		} 
 		else{
 			if(creditCard.getText().length()==16){/*Credit card must be equal to 16 charaters long*/ 
-					if(creditCard.getText().contains("abcdefghijkllmnopqrstuvwxyz")){
+					if(!creditCard.getText().contains("abcdefghijkllmnopqrstuvwxyz")){
 						if(email.getText().endsWith("@g.fmarion.edu")||email.getText().endsWith("@gmail.com")){
 							if(phone.getText().length()==10){
-								if(phone.getText().contains("abcdefghijklmnopqrstuvwxyz")){
+								if(!phone.getText().contains("abcdefghijklmnopqrstuvwxyz")){
 									Person.addCust(firstName, lastName, phone, email, address, creditCard, exp_date, bDay);
+									alert.setText("New Customer Added.");
+									clearForm();
 								}
 							}
 						}
@@ -105,6 +104,7 @@ public class AddCustomerController {
 	    email.clear();
 	    address.clear();
 	    creditCard.clear();
+	    exp_date.clear();
 	    lastName.clear();
 	}
 	
@@ -127,7 +127,6 @@ public class AddCustomerController {
 			try {
 				selectNext(newValue);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} );
@@ -140,8 +139,8 @@ public class AddCustomerController {
 			case "Find Customer" 	: Main.showFindCustMenu(); break;
 			case "Add Employee" 	: Main.showAddEmpMenu(); break;
 			case "Find Employee" 	: Main.showFindEmpMenu(); break;
-			case "Add DVD" 			: Main.showAddMovieMenu(); break;
-			case "Find DVD" 		: Main.showFindMovieMenu(); break;
+			case "Add Movie" 			: Main.showAddMovieMenu(); break;
+			case "Find Movie" 		: Main.showFindMovieMenu(); break;
 			default : System.out.println("Error! Unknown selection!");
 			}
 	}

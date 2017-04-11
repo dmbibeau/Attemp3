@@ -10,15 +10,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FindEmployeeController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FindEmployeeController">
 	<children>
     	<ChoiceBox fx:id="selectionBox" layoutX="10.0" layoutY="60.0" prefWidth="150.0" AnchorPane.leftAnchor="10.0" />
-    	<AnchorPane layoutX="200.0" prefHeight="800.0" prefWidth="540.0">
+    	<AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="540.0">
         	<children>
-      			<Button fx:id="findCust" layoutX="193.0" layoutY="66.0" mnemonicParsing="false" onAction="#submitEntry" text="Find Employee" />
-      			<TextField fx:id="ID" layoutX="234.0" layoutY="29.0" />
-      			<Label layoutX="131.0" layoutY="33.0" text="Pin or Last Name" />
-      			<TableView fx:id="table" layoutX="144.0" layoutY="263.0" prefHeight="686.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-60.0">
+      			<Button fx:id="findCust" layoutX="200.0" layoutY="60.0" mnemonicParsing="false" onAction="#submitEntry" text="Find Employee" />
+      			<TextField fx:id="ID" layoutX="230.0" layoutY="30.0" />
+      			<Label layoutX="130.0" layoutY="30.0" text="Pin or Last Name" />
+      			<TableView fx:id="table" layoutX="200.0" layoutY="150.0" prefHeight="450.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-60.0">
         		<columns>
           			<TableColumn fx:id="fName" prefWidth="91.0" text="First" />
           			<TableColumn fx:id="lName" prefWidth="105.0" text="Last Name" />

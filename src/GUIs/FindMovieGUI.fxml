@@ -10,15 +10,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FindMovieController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FindMovieController">
 	<children>
 	    <ChoiceBox fx:id="selectionBox" layoutX="10.0" layoutY="60.0" prefWidth="150.0" /> 
-		<AnchorPane layoutX="200.0" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"> 
+		<AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"> 
    			<children>
-            			<Button fx:id="findCust" layoutX="345.0" layoutY="135.0" mnemonicParsing="false" onAction="#submitEntry" text="Find Movie" /> 
-            			<TextField fx:id="ID" layoutX="308.0" layoutY="68.0" /> 
-            			<Label layoutX="210.0" layoutY="72.0" text="Identification" /> 
-            			<TableView fx:id="table" layoutX="144.0" layoutY="263.0" prefHeight="300.0" prefWidth="669.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-30.0"> 
+            			<Button fx:id="findCust" layoutX="200.0" layoutY="60.0" mnemonicParsing="false" onAction="#submitEntry" text="Find Movie" /> 
+            			<TextField fx:id="ID" layoutX="235.0" layoutY="30.0" /> 
+            			<Label layoutX="130.0" layoutY="30.0" text="Identification" /> 
+            			<TableView fx:id="table" layoutX="200.0" layoutY="150.0" prefHeight="450.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-30.0"> 
                			<columns> 
                   			<TableColumn fx:id="Bar" prefWidth="75.0" text="Barcode" /> 
                   			<TableColumn fx:id="title" prefWidth="89.0" text="Title" /> 

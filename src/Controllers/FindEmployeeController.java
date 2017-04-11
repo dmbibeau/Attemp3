@@ -6,7 +6,7 @@ import application.Database;
 import application.Employee;
 import application.EmployeeDB;
 import application.Main;
-import application.Person;
+//import application.Person;
 //import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,7 +21,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class FindEmployeeController {
 
-	ObservableList<String> selectionList = FXCollections.observableArrayList("Select", "Add Customer", "Find Customer", "Add Employee", "Find Employee", "Add DVD", "Find DVD");
+	ObservableList<String> selectionList = FXCollections.observableArrayList("Select", "Add Customer", "Find Customer", "Add Employee", "Find Employee", "Add Movie", "Find Movie");
 	@FXML
 	private ChoiceBox<String> selectionBox;
 
@@ -125,8 +125,8 @@ private void selectNext(Object selection) throws IOException {
 		case "Find Customer" 	: Main.showFindCustMenu(); break;
 		case "Add Employee" 	: Main.showAddEmpMenu(); break;
 		case "Find Employee" 	: Main.showFindEmpMenu(); break;
-		case "Add DVD" 			: Main.showAddMovieMenu(); break;
-		case "Find DVD" 		: Main.showFindMovieMenu(); break;
+		case "Add Movie" 			: Main.showAddMovieMenu(); break;
+		case "Find Movie" 		: Main.showFindMovieMenu(); break;
 		default : System.out.println("Error! Unknown selection!");
 		}
 }

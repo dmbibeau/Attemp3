@@ -17,8 +17,8 @@ public class MovieDB {
 		this.a = a; 
 	} 
 	public void addInfo() throws Exception{ 
-		String Querry= " Insert into Customer(pin, Last_Name, first_Name,credit_card,phone_num,b_day, address)" 
-				+ "values(?,?,?,?,?,?,?);"; 
+//		String Querry= " Insert into Customer(pin, Last_Name, first_Name,credit_card,phone_num,b_day, address)" 
+//				+ "values(?,?,?,?,?,?,?);"; 
 /*		PreparedStatement statement = con.prepareStatement(Querry); 
 		statement.setInt(1, a.getPin()); 
 		statement.setString(2, a.getLastName()); 

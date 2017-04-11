@@ -1,13 +1,13 @@
 package application;
 
-import java.beans.Statement;
+//import java.beans.Statement;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+//import java.sql.DriverManager;
+//import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+//import java.sql.SQLException;
 import java.util.ArrayList;
-import java.sql.*;
+//import java.sql.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -22,8 +22,8 @@ public class CustomerDB {
 	}
 	public void addInfo() throws Exception{
 		
-		String Querry= " Insert into Customer(pin, Last_Name, first_Name,credit_card,phone_num,b_day, address)"
-				+ "values(?,?,?,?,?,?,?);";
+//		String Querry= " Insert into Customer(pin, Last_Name, first_Name,credit_card,phone_num,b_day, address)"
+//				+ "values(?,?,?,?,?,?,?);";
 		
 /*		PreparedStatement statement = con.prepareStatement(Querry);
 		

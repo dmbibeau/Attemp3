@@ -9,33 +9,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddMovieController">
-   <children>
-      <ChoiceBox fx:id="selectionBox" layoutX="10.0" layoutY="60.0" prefWidth="150.0" />
-<AnchorPane layoutX="200.0" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Pane layoutX="5.0" layoutY="9.0" prefHeight="515.0" prefWidth="532.0">
-         <children>
-            <TextField fx:id="Title" layoutX="305.0" layoutY="46.0" promptText="Title" />
-            <TextField fx:id="Director" layoutX="83.0" layoutY="104.0" promptText="Director;Directer" />
-            <TextField fx:id="Genre" layoutX="83.0" layoutY="172.0" promptText="Hor, Mys. ectx" />
-            <TextField fx:id="Actors" layoutX="83.0" layoutY="233.0" promptText="Actor,Actor" />
-            <TextField fx:id="Year" layoutX="83.0" layoutY="299.0" promptText="YYYY" />
-            <TextField fx:id="Format" layoutX="83.0" layoutY="368.0" promptText="DVD,BluRAY, VHS" />
-            <TextField fx:id="Language" layoutX="83.0" layoutY="436.0" promptText="Language" />
-            <TextField fx:id="Barcode" layoutX="83.0" layoutY="46.0" promptText="Barcode" />
-            <Label layoutX="33.0" layoutY="50.0" text="Barcode" />
-            <Label layoutX="252.0" layoutY="50.0" text="Title" />
-            <Label layoutX="33.0" layoutY="108.0" text="Director" />
-            <Label layoutX="33.0" layoutY="176.0" text="Genre" />
-            <Label layoutX="33.0" layoutY="237.0" text="Actor" />
-            <Label layoutX="33.0" layoutY="303.0" text="Year" />
-            <Label layoutX="33.0" layoutY="372.0" text="Format" />
-            <Label layoutX="21.0" layoutY="440.0" text="Language" />
-            <Button fx:id="Submit" layoutX="305.0" layoutY="436.0" mnemonicParsing="false" onAction="#submitEntry" prefHeight="25.0" prefWidth="213.0" text="Submit" />
-         </children>
-      </Pane>
-   </children>
-</AnchorPane>
-</children>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddMovieController">
+	<children>
+    	<ChoiceBox fx:id="selectionBox" layoutX="10.0" layoutY="60.0" prefWidth="150.0" />
+		<AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   			<children>
+        	<Label layoutX="252.0" layoutY="50.0" text="Title" />
+        	<TextField fx:id="Title" layoutX="305.0" layoutY="46.0" promptText="Title" />
+
+        	<TextField fx:id="Director" layoutX="83.0" layoutY="104.0" promptText="Director;Directer" />
+        	<Label layoutX="33.0" layoutY="108.0" text="Director" />
+
+           	<TextField fx:id="Genre" layoutX="83.0" layoutY="172.0" promptText="Hor, Mys. ectx" />
+           	<Label layoutX="33.0" layoutY="176.0" text="Genre" />
+
+           	<TextField fx:id="Actors" layoutX="83.0" layoutY="233.0" promptText="Actor,Actor" />
+           	<Label layoutX="33.0" layoutY="237.0" text="Actor" />
+
+           	<TextField fx:id="Year" layoutX="83.0" layoutY="299.0" promptText="YYYY" />
+           	<Label layoutX="33.0" layoutY="303.0" text="Year" />
+
+           	<TextField fx:id="Format" layoutX="83.0" layoutY="368.0" promptText="DVD,BluRAY, VHS" />
+           	<Label layoutX="33.0" layoutY="372.0" text="Format" />
+
+           	<TextField fx:id="Language" layoutX="83.0" layoutY="436.0" promptText="Language" />
+           	<Label layoutX="21.0" layoutY="440.0" text="Language" />
+
+           	<TextField fx:id="Barcode" layoutX="83.0" layoutY="46.0" promptText="Barcode" />
+           	<Label layoutX="33.0" layoutY="50.0" text="Barcode" />
+           	<Button fx:id="Submit" layoutX="305.0" layoutY="436.0" mnemonicParsing="false" onAction="#submitEntry" prefHeight="25.0" prefWidth="213.0" text="Submit" />
+   			</children>
+		</AnchorPane>
+	</children>
 </AnchorPane>
