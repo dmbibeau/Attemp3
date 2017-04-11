@@ -53,8 +53,7 @@ public class AddCustomerController {
     @FXML
     private TextField bDay;
 
-/*	@FXML
-	public void generatePin(ActionEvent event) throws SQLException {
+	public void updatePin() throws SQLException {
 		ResultSet rs = Person.getLastPin();
 		rs.next();
 		
@@ -62,36 +61,36 @@ public class AddCustomerController {
 		int Pin = Integer.valueOf(strPin);
 		++Pin;
 		pinn.setText("" + Pin);
-	}*/
+	}
 	
-	public void submitEntry(ActionEvent event) {
+	public void submitEntry(ActionEvent event) throws SQLException {
 		// We can add validation here
 		//Person.addCust(firstName, lastName, phone, email, address, creditCard, exp_date, bDay);
-		if(pinn.getText().isEmpty()||
-			bDay.getText().isEmpty()||
-			exp_date.getText().isEmpty()||
-			creditCard.getText().isEmpty()||
-			address.getText().isEmpty()||
-			email.getText().isEmpty()||
-			phone.getText().isEmpty()||
-			lastName.getText().isEmpty()||
-			firstName.getText().isEmpty()){/*Null validation for all feilds*/ 
-			alert.setText("One or more feilds are empty and make sure PIN is filled.");
-				
+		if(pinn.getText().isEmpty() || bDay.getText().isEmpty() ||
+			exp_date.getText().isEmpty() || creditCard.getText().isEmpty() ||
+			address.getText().isEmpty() || email.getText().isEmpty() ||
+			phone.getText().isEmpty() || lastName.getText().isEmpty()||
+			firstName.getText().isEmpty()) { 
+			// Null validation for all fields
+			// Maybe change this to tell which field is empty/in error
+			alert.setText("One or more fields are empty.");
 		} 
 		else{
 			if(creditCard.getText().length()==16){/*Credit card must be equal to 16 charaters long*/ 
 					if(!creditCard.getText().contains("abcdefghijkllmnopqrstuvwxyz")){
-						if(email.getText().endsWith("@g.fmarion.edu")||email.getText().endsWith("@gmail.com")){
+						if (!email.getText().contains("@")) {
+							System.out.println("Invalid email address.");
+						} else {
+						// if(email.getText().endsWith("@g.fmarion.edu")||email.getText().endsWith("@gmail.com")){
 							if(phone.getText().length()==10){
 								if(!phone.getText().contains("abcdefghijklmnopqrstuvwxyz")){
 									Person.addCust(firstName, lastName, phone, email, address, creditCard, exp_date, bDay);
 									alert.setText("New Customer Added.");
 									clearForm();
+									updatePin();
 								}
 							}
-						}
-						
+						}	
 					}
 				} 
 		}
@@ -112,15 +111,7 @@ public class AddCustomerController {
 	private void initialize() throws SQLException {
 		selectionBox.setItems(selectionList);
 		
-		//TESTING!!!
-		ResultSet rs = Person.getLastPin();
-		rs.next();
-		
-		String strPin = rs.getString("pin");
-		int Pin = Integer.valueOf(strPin);
-		++Pin;
-		pinn.setText("" + Pin);
-		//END TESTING!!!
+		updatePin();
 		
 		//Listen for selection changes
 		selectionBox.getSelectionModel().selectedItemProperty().addListener( (v, oldValue, newValue) -> {
