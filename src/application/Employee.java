@@ -96,6 +96,10 @@ public class Employee {
 
 	Date BDay;
 	
+	String username;
+	
+	static String password;
+	
 	Employee(){
 	}
 	
@@ -131,4 +135,5 @@ public class Employee {
 		} catch (Exception e){System.out.println(e);}
 		return null;
 	}
+
 }

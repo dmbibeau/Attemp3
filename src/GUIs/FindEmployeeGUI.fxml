@@ -29,10 +29,11 @@
             		<TableColumn fx:id="pay" prefWidth="51.0" text="Pay" />
         		</columns>
       			</TableView>
+            <Label fx:id="accessLabel" layoutX="131.0" layoutY="110.0" prefHeight="17.0" prefWidth="241.0" />
      		</children>
      	</AnchorPane>
      	<Button layoutX="70.0" layoutY="135.0" mnemonicParsing="false" prefWidth="90.0" text="Edit" />
       	<Button fx:id="removeEmp" layoutX="70.0" layoutY="175.0" mnemonicParsing="false" onAction="#removeEmp" prefWidth="90.0" text="Remove" />
-      	<Button layoutX="70.0" layoutY="215.0" mnemonicParsing="false" prefWidth="90.0" text="Schedule" />
+      	<Button fx:id="scheduleButton" layoutX="70.0" layoutY="215.0" mnemonicParsing="false" onAction="#scheduleButton" prefWidth="90.0" text="Schedule" />
    	</children>
 </AnchorPane>

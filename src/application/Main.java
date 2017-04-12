@@ -115,9 +115,9 @@ import javafx.scene.layout.AnchorPane;
 		/* The following line will create a table called employee
 		 * if the table isn't already created. But you NEED a 
 		 * database called ddt_movies*/
-		Database.createEmpTable();
+		EmployeeDB.createEmpTable();
 		/* The following line will add a line to the table customer. */
-		//Database.postEmp();
+		//EmployeeDB.postEmp();
 		//The following line of code will add the movie table. 
 		Database.createMovieTable();
 		/*The following line will create a table called transaction
