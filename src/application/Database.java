@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 //import Controllers.User;
 
@@ -40,7 +41,9 @@ public class Database {
 		return null;
 	}	
 
-	public static void createCustTable() throws Exception{
+
+		
+	public static void createCustTable() throws Exception {
 		try{
 			Connection con = getConnection();
 			PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS customer("
@@ -87,7 +90,7 @@ public class Database {
 		}
 	}	
 	
-	public static void createEmpTable() throws Exception{
+/*	public static void createEmpTable() throws Exception{
 		try{
 			Connection con = getConnection();
 			PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS employee("
@@ -103,9 +106,9 @@ public class Database {
 			create.executeUpdate();
 		} catch (Exception e){System.out.println(e);}
 		finally{System.out.println("Function complete.");}		
-	}
+	}*/
 	
-	public static void postEmp() throws Exception{
+/*	public static void postEmp() throws Exception{
 		try{
 				Connection con = getConnection();
 				PreparedStatement posted = con.prepareStatement("INSERT INTO employee(name, surname, phone, address, pay, position, dob) VALUES "
@@ -121,7 +124,7 @@ public class Database {
 		finally {
 			System.out.println("Insert Completed");
 		}
-	}
+	}*/
 	
 	
 	public static void createMovieTable() throws Exception{

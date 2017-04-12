@@ -20,17 +20,28 @@ import javafx.scene.layout.AnchorPane;
 
 	@Override
 	public void start(Stage primaryStage) throws IOException {
+		UserClass currUser = new UserClass();
 		Main.primaryStage = primaryStage;
-		Main.primaryStage.setTitle("Main Menu");
-		showMainMenu();
+		showLogin(currUser);
 	}
 
+	public static void showLogin(UserClass currUser) throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("../GUIs/LoginGUI.fxml"));
+		mainLayout = loader.load();
+		Scene scene = new Scene(mainLayout);
+		primaryStage.setScene(scene);
+		Main.primaryStage.setTitle("Login Screen");
+		primaryStage.show();
+	}
+	
 	public static void showMainMenu() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("../GUIs/MainMenuGUI.fxml"));
 		mainLayout = loader.load();
 		Scene scene = new Scene(mainLayout);
 		primaryStage.setScene(scene);
+		Main.primaryStage.setTitle("Main Menu");
 		primaryStage.show();
 	}
 	
@@ -104,9 +115,9 @@ import javafx.scene.layout.AnchorPane;
 		/* The following line will create a table called employee
 		 * if the table isn't already created. But you NEED a 
 		 * database called ddt_movies*/
-		Database.createEmpTable();
+		EmployeeDB.createEmpTable();
 		/* The following line will add a line to the table customer. */
-		//Database.postEmp();
+		//EmployeeDB.postEmp();
 		//The following line of code will add the movie table. 
 		Database.createMovieTable();
 		/*The following line will create a table called transaction

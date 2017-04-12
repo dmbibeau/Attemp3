@@ -96,6 +96,10 @@ public class Employee {
 
 	Date BDay;
 	
+	String username;
+	
+	static String password;
+	
 	Employee(){
 	}
 	
@@ -121,9 +125,6 @@ public class Employee {
 		}catch (Exception ex) {System.out.println(ex);}
 	}
 	
-	
-	
-	
 	public static ResultSet getLastEmpID(){
 		try{
 			Connection con = Database.getConnection();		
@@ -134,4 +135,5 @@ public class Employee {
 		} catch (Exception e){System.out.println(e);}
 		return null;
 	}
+
 }

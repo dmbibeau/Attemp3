@@ -1,11 +1,14 @@
 package Controllers;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import application.Database;
 import application.Employee;
 import application.EmployeeDB;
 import application.Main;
+import application.UserClass;
 //import application.Person;
 //import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -14,6 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -59,6 +63,12 @@ public class FindEmployeeController {
     private Button removeEmp;
     
     @FXML
+    private Button scheduleButton;
+    
+    @FXML
+    private Label accessLabel;
+    
+    @FXML
     void removeEmp(ActionEvent event) throws Exception{
     	ObservableList<Employee> employeeSelected, allEmployees;
     	allEmployees = table.getItems();
@@ -66,6 +76,25 @@ public class FindEmployeeController {
     	
     	Database.removeEmp(employeeSelected.get(0).getPin());    	
     	employeeSelected.forEach(allEmployees::remove);
+    }
+    
+    @FXML
+    void scheduleButton(ActionEvent event) throws SQLException {
+		ResultSet rs2 = UserClass.getPosition();
+		rs2.next();
+		String currPosition = rs2.getString("position");
+		System.out.println("Schedule!" + currPosition);
+		if (currPosition.compareTo("Manager")==0) {
+			accessLabel.setText("ACCESS GRANTED");
+			System.out.println("Manager");
+		}
+		if (currPosition.compareTo("Employee")==0) {
+			accessLabel.setText("ACCESS DENIED");
+			System.out.println("Employee");
+		}
+//		System.out.println(rs2.getString("position"));
+//		currUser.setText(rs2.getString("position"));
+
     }
     
     @FXML
