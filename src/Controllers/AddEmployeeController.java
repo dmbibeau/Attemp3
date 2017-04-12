@@ -9,6 +9,7 @@ import java.sql.SQLException;
 
 import application.Employee;
 import application.Main;
+import application.UserClass;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -47,6 +48,9 @@ public class AddEmployeeController {
 
     @FXML
     private Label empID;
+    
+    @FXML
+    private Label currUser;
 
 /*	@FXML
 	public void generatePin(ActionEvent event) throws SQLException {	
@@ -76,6 +80,11 @@ public class AddEmployeeController {
 	@FXML
 	private void initialize() throws SQLException {
 		selectionBox.setItems(selectionList);
+		
+		ResultSet rs2 = UserClass.getPosition();
+		rs2.next();
+		System.out.println(rs2.getString("position"));
+		currUser.setText(rs2.getString("position"));
 
 		//TESTING!!!
 		ResultSet rs = Employee.getLastEmpID();

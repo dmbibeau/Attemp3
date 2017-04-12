@@ -121,9 +121,6 @@ public class Employee {
 		}catch (Exception ex) {System.out.println(ex);}
 	}
 	
-	
-	
-	
 	public static ResultSet getLastEmpID(){
 		try{
 			Connection con = Database.getConnection();		
