@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 //import Controllers.User;
 
@@ -40,7 +41,25 @@ public class Database {
 		return null;
 	}	
 
-	public static void createCustTable() throws Exception{
+	public static void createUserTable() throws Exception {
+		try{
+			Connection con = getConnection();
+			PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS curruser(position char(3))");
+			create.executeUpdate();
+		} catch (Exception e) {System.out.println(e);}
+		finally{System.out.println("Function complete.");}
+	}
+	
+	public static void updateUser(String position) {
+		try {
+			Connection con = Database.getConnection();		
+			PreparedStatement posted = con.prepareStatement("INSERT INTO curruser(position) VALUES "
+					+ "('" + position + "')");
+			posted.executeUpdate();
+		}catch (Exception ex) {System.out.println(ex);}
+	}
+	
+	public static void createCustTable() throws Exception {
 		try{
 			Connection con = getConnection();
 			PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS customer("
