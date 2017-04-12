@@ -100,7 +100,7 @@ import javafx.scene.layout.AnchorPane;
 		 * database called ddt_movies*/
 		Database.createCustTable();
 		/* The following line will add a line to the table customer. */
-		//Database.postCust();
+		Database.postCust();
 		/* The following line will create a table called employee
 		 * if the table isn't already created. But you NEED a 
 		 * database called ddt_movies*/

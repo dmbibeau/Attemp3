@@ -92,7 +92,7 @@ public class Movie {
 			TextField actors2, TextField year2, TextField format2, TextField language2) {
 		try {
 			Connection con = Database.getConnection();		
-			PreparedStatement posted = con.prepareStatement("INSERT INTO movies(barcode, title, director, genre, actors, year, format, language) VALUES "
+			PreparedStatement posted = con.prepareStatement("INSERT INTO movie(barcode, title, director, genre, actors, year, format, language) VALUES "
 					+ "('" + barcode2.getText()
 					+"', '"+ title2.getText()      
 					+"', '"+ director2.getText()
