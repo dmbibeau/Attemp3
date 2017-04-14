@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FindCustomerController">
+	<children>
+    	<ChoiceBox fx:id="selectionBox" layoutX="10.0" layoutY="60.0" prefWidth="150.0" AnchorPane.leftAnchor="10.0" />
+      	<AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="600.0">
+        	<children>         
+      			<Button fx:id="findCust" layoutX="200.0" layoutY="60.0" mnemonicParsing="false" onAction="#submitEntry" text="Find Customer" />
+      			<TextField fx:id="ID" layoutX="235.0" layoutY="30.0" />
+      			<Label layoutX="130.0" layoutY="30.0" text="Identification" />
+      			<TableView fx:id="table" layoutX="200.0" layoutY="150.0" prefHeight="450.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        		<columns>
+          			<TableColumn fx:id="first" prefWidth="75.0" text="First" />
+          			<TableColumn fx:id="last" prefWidth="75.0" text="Last Name" />
+            		<TableColumn fx:id="pin" prefWidth="130.0" text="PIN" />
+            		<TableColumn fx:id="address" prefWidth="176.0" text="Address" />
+            		<TableColumn fx:id="phone" minWidth="0.0" prefWidth="143.0" text="Telephone No." />
+        		</columns>
+      			</TableView>
+      		</children>
+      	</AnchorPane>
+      	<Button layoutX="70.0" layoutY="215.0" mnemonicParsing="false" prefWidth="90.0" text="Transact" />
+      	<Button fx:id="removeCust" layoutX="70.0" layoutY="175.0" mnemonicParsing="false" prefWidth="90.0" onAction="#removeCust" text="Remove" />
+      	<Button layoutX="70.0" layoutY="135.0" mnemonicParsing="false" prefWidth="90.0" text="Edit" />
+   	</children>
+</AnchorPane>
